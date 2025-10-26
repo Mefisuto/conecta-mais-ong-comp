@@ -1,0 +1,176 @@
+/* Estilos específicos para a página de Voluntários */
+
+.volunteer-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.volunteer-intro h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.volunteer-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.volunteer-intro .hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.how-to-volunteer h3,
+.volunteer-form-section h3,
+.testimonials h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.step-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-card h4 {
+    color: #28a745;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.volunteer-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.volunteer-form .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.testimonials {
+    background-color: #e9ecef;
+    padding: 60px 0;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-card p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.testimonial-card span {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Responsividade para a página de voluntários */
+@media (max-width: 768px) {
+    .volunteer-intro h2 {
+        font-size: 2rem;
+    }
+
+    .volunteer-intro p {
+        font-size: 1rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-form {
+        padding: 20px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+        width: calc(100% - 20px);
+    }
+}
+

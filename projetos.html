@@ -1,83 +1,120 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
 <head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conecta+ ONG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaMais ONG - Projetos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projetos.css">     <!-- Estilo específico para a página de projetos. É bom separar para manter a organização. -->
   <link rel="stylesheet" href="css/design-system.min.css">
-  <link rel="stylesheet" href="css/layout.min.css">
-  <link rel="stylesheet" href="css/components.min.css">
-  <link rel="stylesheet" href="css/pages.min.css">
-  <script type="module" src="js/main.min.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#app">Pular para conteúdo</a>
-<header class="site-header">
-  <div class="container bar">
-    <a class="brand" href="index.html" data-spa-link>Conecta+ ONG</a>
-    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" data-hamburger>☰</button>
-    <nav class="nav" data-nav aria-label="Principal">
-      <a href="index.html" data-spa-link>Início</a>
-      <div class="nav-item">
-        <a href="projetos.html" data-spa-link aria-haspopup="true" aria-expanded="false" aria-controls="menu-projetos">Projetos ▾</a>
-        <div id="menu-projetos" class="dropdown" role="menu">
-          <a href="projetos.html#educacao" data-spa-link role="menuitem">Educação</a>
-          <a href="projetos.html#saude" data-spa-link role="menuitem">Saúde</a>
-          <a href="projetos.html#meioambiente" data-spa-link role="menuitem">Meio ambiente</a>
+  <a class="visually-hidden" href="#conteudo">Pular para conteúdo</a>
+    <header>
+        <button id="hamburger" class="btn ghost" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<nav class="navbar">
+            <a href="#" class="logo">ConectaMais ONG</a>
+            <button class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="navbar-links">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="voluntarios.html">Voluntários</a></li>
+                    <li><a href="doacoes.html">Doações</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<div class="container" role="region" aria-label="Preferências de exibição" style="display:flex; gap:.5rem; align-items:center; padding:.5rem 0">
+  <span class="badge info" aria-hidden="true">Tema</span>
+  <button type="button" class="btn ghost" data-action="set-theme" data-value="light">Claro</button>
+  <button type="button" class="btn ghost" data-action="set-theme" data-value="dark">Escuro</button>
+  <label class="btn ghost" style="gap:.5rem">
+    <input id="toggle-shield" type="checkbox" aria-label="Ativar modo alto contraste" style="accent-color:#FFD54F">
+    Alto contraste
+  </label>
+</div>
+<div class="toast" aria-live="polite"></div>
+<div id="live" class="visually-hidden" aria-live="polite"></div>
+<div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Janela modal">
+  <div class="modal">
+    <header style="display:flex; justify-content:space-between; align-items:center">
+      <strong>Exemplo de Modal</strong>
+      <button class="btn ghost" data-close-modal>Fechar</button>
+    </header>
+    <p>Conteúdo demonstrativo para cumprir o requisito de componente modal.</p>
+  </div>
+</div>
+
+
+    <main id="conteudo">
+        <section class="projects-list container">
+            <h2>Nossos Projetos</h2>
+            <div class="filters">
+                <button class="btn btn-small active" data-filter="all">Todos</button>
+                <button class="btn btn-small" data-filter="educacao">Educação</button>
+                <button class="btn btn-small" data-filter="saude">Saúde</button>
+                <button class="btn btn-small" data-filter="meio-ambiente">Meio Ambiente</button>
+            </div>
+
+            <div class="project-grid">
+                <!-- Início dos cards de projeto. Cada um representa uma iniciativa da ONG. -->
+                <div class="project-card" data-category="educacao" id="educacao">
+                    <h3>Projeto Educação para o Futuro</h3>
+                    <img src="img/educacao.webp" alt="Crianças estudando">
+                    <p>Oferecemos aulas de reforço e atividades extracurriculares para crianças e adolescentes em situação de vulnerabilidade, visando um futuro mais promissor.</p>
+                    <a href="#" class="btn btn-primary">Detalhes do Projeto</a>
+                    <a href="doacoes.html" class="btn btn-secondary">Doar para este Projeto</a>
+                </div>
+
+                <div class="project-card" data-category="saude" id="saude">
+                    <h3>Saúde em Comunidade</h3>
+                    <img src="img/saude.webp" alt="Pessoas em atendimento médico">
+                    <p>Levamos atendimento médico e odontológico básico para comunidades carentes, promovendo a saúde e o bem-estar.</p>
+                    <a href="#" class="btn btn-primary">Detalhes do Projeto</a>
+                    <a href="doacoes.html" class="btn btn-secondary">Doar para este Projeto</a>
+                </div>
+
+                <div class="project-card" data-category="meio-ambiente" id="meio-ambiente">
+                    <h3>Guardiões da Natureza</h3>
+                    <img src="img/meio-ambiente.webp" alt="Plantio de árvores">
+                    <p>Iniciativas de reflorestamento e conscientização ambiental para proteger nossos ecossistemas e garantir um planeta mais verde.</p>
+                    <a href="#" class="btn btn-primary">Detalhes do Projeto</a>
+                    <a href="doacoes.html" class="btn btn-secondary">Doar para este Projeto</a>
+                </div>
+
+                <!-- Mais um projeto, este focado em inclusão digital. -->
+                <div class="project-card" data-category="educacao">
+                    <h3>Inclusão Digital</h3>
+                    <img src="img/inclusao-digital.webp" alt="Pessoas usando computadores">
+                    <p>Cursos de informática básica para jovens e adultos, abrindo portas para o mercado de trabalho e a cidadania digital.</p>
+                    <a href="#" class="btn btn-primary">Detalhes do Projeto</a>
+                    <a href="doacoes.html" class="btn btn-secondary">Doar para este Projeto</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ConectaMais ONG. Todos os direitos reservados.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
         </div>
-      </div>
-      <a href="voluntarios.html" data-spa-link>Voluntariado</a>
-      <a href="doacoes.html" data-spa-link>Doações</a>
-      <a href="contato.html" data-spa-link>Contato</a>
-    </nav>
-  </div>
-</header>
-<div class="toast-container" aria-live="polite" aria-atomic="true"></div>
-<div class="modal-backdrop" data-modal-backdrop>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h3 id="modal-title">Confirmação</h3>
-      <button class="btn btn-outline" data-close-modal>Fechar</button>
-    </div>
-    <div class="modal-body">
-      <p>Confirme a ação.</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" data-close-modal>Cancelar</button>
-      <button class="btn btn-primary" data-close-modal>OK</button>
-    </div>
-  </div>
-</div>
-<main id="app" data-spa-root>
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Projetos</h2>
-    <p>Carregando…</p>
-  </div>
-</section>
-</main>
-<div class="theme-controls" role="group" aria-label="Preferências de tema">
-  <button class="theme-btn" data-theme="light" aria-pressed="false">Claro</button>
-  <button class="theme-btn" data-theme="dark" aria-pressed="false">Escuro</button>
-  <button class="theme-btn" data-theme="contrast" aria-pressed="false">Alto contraste</button>
-</div>
-<footer class="section" style="background:var(--white); border-top:1px solid var(--color-neutral-200)">
-  <div class="container grid-12">
-    <div class="col-md-6 col-lg-4">
-      <strong>Conecta+ ONG</strong>
-      <p class="help">CNPJ 00.000.000/0000-00</p>
-    </div>
-    <div class="col-md-6 col-lg-4 stack">
-      <strong>Contato</strong>
-      <a href="mailto:contato@conectamais.org">contato@conectamais.org</a>
-      <span class="help">(11) 0000-0000</span>
-    </div>
-    <div class="col-md-12 col-lg-4 stack">
-      <strong>Transparência</strong>
-      <a href="#">Relatórios</a>
-      <a href="#">Política de privacidade</a>
-    </div>
-  </div>
-</footer>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/projetos.js"></script>     <!-- Script específico para a funcionalidade de filtros de projetos. Ajuda a manter o JS organizado. -->
+  <script src="js/app.min.js" defer></script>
 </body>
 </html>
+

@@ -1,0 +1,172 @@
+/* Estilos específicos para a página de Doações */
+
+.donation-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.donation-intro h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.donation-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.donation-intro .hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.donation-options h3,
+.donation-form-section h3,
+.transparency h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.option-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+}
+
+.option-card h4 {
+    color: #28a745;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.option-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.option-card .btn {
+    margin: 5px auto;
+    width: calc(100% - 20px);
+}
+
+.donation-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input[type="number"]:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.donation-form .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 20px;
+}
+
+.transparency {
+    text-align: center;
+    background-color: #e9ecef;
+    padding: 60px 0;
+}
+
+.transparency p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+/* Responsividade para a página de doações */
+@media (max-width: 768px) {
+    .donation-intro h2 {
+        font-size: 2rem;
+    }
+
+    .donation-intro p {
+        font-size: 1rem;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-form {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: calc(100% - 20px);
+    }
+}
+

@@ -1,0 +1,156 @@
+/* Estilos específicos para a página de Contato */
+
+.contact-section h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-form-container,
+.contact-info-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form-container h3,
+.contact-info-container h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h4 {
+    color: #28a745;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.social-media-contact {
+    margin-top: 30px;
+}
+
+.social-media-contact h4 {
+    color: #28a745;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.social-media-contact a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.social-media-contact a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 40px;
+}
+
+.map-container h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+}
+
+/* Responsividade para a página de contato */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-intro {
+        font-size: 1rem;
+    }
+
+    .contact-form-container,
+    .contact-info-container,
+    .map-container {
+        padding: 20px;
+    }
+}
+

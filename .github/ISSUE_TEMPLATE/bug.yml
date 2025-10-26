@@ -1,0 +1,15 @@
+
+name: "Bug report"
+about: "Relate um problema"
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: Passos para reproduzir
+  - type: textarea
+    attributes:
+      label: Resultado esperado
+  - type: textarea
+    attributes:
+      label: Evidências (prints, vídeos)

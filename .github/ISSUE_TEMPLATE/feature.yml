@@ -1,0 +1,12 @@
+
+name: "Feature request"
+about: "Sugira uma melhoria"
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    attributes:
+      label: Descrição
+  - type: textarea
+    attributes:
+      label: Critérios de Aceite

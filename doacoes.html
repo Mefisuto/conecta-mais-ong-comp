@@ -1,86 +1,150 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
 <head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conecta+ ONG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaMais ONG - Doações</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doacoes.css"> <!-- Estilo específico para a página de doações. Ajuda a manter o CSS modular. -->
   <link rel="stylesheet" href="css/design-system.min.css">
-  <link rel="stylesheet" href="css/layout.min.css">
-  <link rel="stylesheet" href="css/components.min.css">
-  <link rel="stylesheet" href="css/pages.min.css">
-  <script type="module" src="js/main.min.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#app">Pular para conteúdo</a>
-<header class="site-header">
-  <div class="container bar">
-    <a class="brand" href="index.html" data-spa-link>Conecta+ ONG</a>
-    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" data-hamburger>☰</button>
-    <nav class="nav" data-nav aria-label="Principal">
-      <a href="index.html" data-spa-link>Início</a>
-      <div class="nav-item">
-        <a href="projetos.html" data-spa-link aria-haspopup="true" aria-expanded="false" aria-controls="menu-projetos">Projetos ▾</a>
-        <div id="menu-projetos" class="dropdown" role="menu">
-          <a href="projetos.html#educacao" data-spa-link role="menuitem">Educação</a>
-          <a href="projetos.html#saude" data-spa-link role="menuitem">Saúde</a>
-          <a href="projetos.html#meioambiente" data-spa-link role="menuitem">Meio ambiente</a>
+  <a class="visually-hidden" href="#conteudo">Pular para conteúdo</a>
+    <header>
+        <button id="hamburger" class="btn ghost" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<nav class="navbar">
+            <a href="#" class="logo">ConectaMais ONG</a>
+            <button class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="navbar-links">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="voluntarios.html">Voluntários</a></li>
+                    <li><a href="doacoes.html">Doações</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<div class="container" role="region" aria-label="Preferências de exibição" style="display:flex; gap:.5rem; align-items:center; padding:.5rem 0">
+  <span class="badge info" aria-hidden="true">Tema</span>
+  <button type="button" class="btn ghost" data-action="set-theme" data-value="light">Claro</button>
+  <button type="button" class="btn ghost" data-action="set-theme" data-value="dark">Escuro</button>
+  <label class="btn ghost" style="gap:.5rem">
+    <input id="toggle-shield" type="checkbox" aria-label="Ativar modo alto contraste" style="accent-color:#FFD54F">
+    Alto contraste
+  </label>
+</div>
+<div class="toast" aria-live="polite"></div>
+<div id="live" class="visually-hidden" aria-live="polite"></div>
+<div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Janela modal">
+  <div class="modal">
+    <header style="display:flex; justify-content:space-between; align-items:center">
+      <strong>Exemplo de Modal</strong>
+      <button class="btn ghost" data-close-modal>Fechar</button>
+    </header>
+    <p>Conteúdo demonstrativo para cumprir o requisito de componente modal.</p>
+  </div>
+</div>
+
+
+    <main id="conteudo">
+        <section class="donation-intro container">
+            <h2>Sua Doação Transforma Vidas!</h2>
+            <p>Cada contribuição, por menor que seja, faz uma enorme diferença nos projetos da ConectaMais ONG. Com o seu apoio, podemos continuar levando educação, saúde e esperança para quem mais precisa.</p>
+            <img src="img/doacao-hero.webp" alt="Mãos segurando uma planta jovem" class="hero-image">
+            <!-- Imagem de capa para a seção de doações. Tenta passar uma mensagem de esperança. -->
+        </section>
+
+        <section class="donation-options container">
+            <h3>Escolha como Doar</h3>
+            <div class="options-grid">
+                <!-- Card para doação única. Várias opções pré-definidas e uma para valor personalizado. -->
+                <div class="option-card">
+                    <h4>Doação Única</h4>
+                    <p>Faça uma doação pontual para apoiar nossas causas.</p>
+                    <button class="btn btn-primary" data-amount="50">Doar R$50</button>
+                    <button class="btn btn-primary" data-amount="100">Doar R$100</button>
+                    <button class="btn btn-primary" data-amount="200">Doar R$200</button>
+                    <button class="btn btn-primary" data-amount="custom">Outro Valor</button>
+                </div>
+                <!-- Card para doação mensal. Incentiva a contribuição contínua. -->
+                <div class="option-card">
+                    <h4>Doação Mensal</h4>
+                    <p>Contribua regularmente e garanta um impacto contínuo.</p>
+                    <button class="btn btn-primary" data-amount="30" data-type="monthly">Doar R$30/mês</button>
+                    <button class="btn btn-primary" data-amount="50" data-type="monthly">Doar R$50/mês</button>
+                    <button class="btn btn-primary" data-amount="custom" data-type="monthly">Outro Valor/mês</button>
+                </div>
+                <!-- Card para doação por projeto. Direciona o doador para onde ele mais se importa. -->
+                <div class="option-card">
+                    <h4>Doação por Projeto</h4>
+                    <p>Apoie um projeto específico que você mais se identifica.</p>
+                    <a href="projetos.html" class="btn btn-primary">Ver Projetos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="donation-form-section container">
+            <h3>Detalhes da Doação</h3>
+            <form class="donation-form">
+                <div class="form-group">
+                    <label for="valor">Valor da Doação (R$):</label>
+                    <input type="number" id="valor" name="valor" min="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="formaPagamento">Forma de Pagamento:</label>
+                    <select id="formaPagamento" name="formaPagamento" required>
+                        <option value="">Selecione</option>
+                        <option value="cartao">Cartão de Crédito</option>
+                        <option value="boleto">Boleto Bancário</option>
+                        <option value="pix">PIX</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="anonima" name="anonima">
+                    <label for="anonima">Desejo fazer uma doação anônima</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirmar Doação</button>
+                <!-- Botão para finalizar a doação. -->
+            </form>
+            <p class="disclaimer">*Este é um formulário simulado e não processa pagamentos reais.</p>
+        </section>
+
+        <section class="transparency container">
+            <h3>Transparência</h3>
+            <p>A ConectaMais ONG preza pela transparência em todas as suas ações. Publicamos regularmente relatórios de prestação de contas para que você saiba exatamente como sua doação está sendo utilizada.</p>
+            <a href="#" class="btn btn-secondary">Ver Relatórios de Transparência</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ConectaMais ONG. Todos os direitos reservados.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
         </div>
-      </div>
-      <a href="voluntarios.html" data-spa-link>Voluntariado</a>
-      <a href="doacoes.html" data-spa-link>Doações</a>
-      <a href="contato.html" data-spa-link>Contato</a>
-    </nav>
-  </div>
-</header>
-<div class="toast-container" aria-live="polite" aria-atomic="true"></div>
-<div class="modal-backdrop" data-modal-backdrop>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h3 id="modal-title">Confirmação</h3>
-      <button class="btn btn-outline" data-close-modal>Fechar</button>
-    </div>
-    <div class="modal-body">
-      <p>Confirme a ação.</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" data-close-modal>Cancelar</button>
-      <button class="btn btn-primary" data-close-modal>OK</button>
-    </div>
-  </div>
-</div>
-<main id="app" data-spa-root>
-<section class="section">
-  <div class="container">
-    <div class="donation-cta">
-      <h2 style="margin-top:0">Sua doação viabiliza nossos projetos</h2>
-      <p>Transparência total e relatórios trimestrais de prestação de contas.</p>
-      <button class="btn btn-secondary" onclick="showToast('Obrigado pelo apoio!','success')">Tenho interesse</button>
-    </div>
-  </div>
-</section>
-</main>
-<div class="theme-controls" role="group" aria-label="Preferências de tema">
-  <button class="theme-btn" data-theme="light" aria-pressed="false">Claro</button>
-  <button class="theme-btn" data-theme="dark" aria-pressed="false">Escuro</button>
-  <button class="theme-btn" data-theme="contrast" aria-pressed="false">Alto contraste</button>
-</div>
-<footer class="section" style="background:var(--white); border-top:1px solid var(--color-neutral-200)">
-  <div class="container grid-12">
-    <div class="col-md-6 col-lg-4">
-      <strong>Conecta+ ONG</strong>
-      <p class="help">CNPJ 00.000.000/0000-00</p>
-    </div>
-    <div class="col-md-6 col-lg-4 stack">
-      <strong>Contato</strong>
-      <a href="mailto:contato@conectamais.org">contato@conectamais.org</a>
-      <span class="help">(11) 0000-0000</span>
-    </div>
-    <div class="col-md-12 col-lg-4 stack">
-      <strong>Transparência</strong>
-      <a href="#">Relatórios</a>
-      <a href="#">Política de privacidade</a>
-    </div>
-  </div>
-</footer>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/doacoes.js"></script> <!-- Script específico para a lógica de doações e validação do formulário. É importante garantir que os dados estejam corretos. -->
+  <script src="js/app.min.js" defer></script>
 </body>
 </html>
+

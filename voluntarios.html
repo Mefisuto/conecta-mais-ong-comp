@@ -1,87 +1,156 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
 <head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conecta+ ONG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaMais ONG - Voluntários</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/voluntarios.css">     <!-- Estilo específico para a página de voluntários. Mantendo tudo separado para facilitar a manutenção. -->
   <link rel="stylesheet" href="css/design-system.min.css">
-  <link rel="stylesheet" href="css/layout.min.css">
-  <link rel="stylesheet" href="css/components.min.css">
-  <link rel="stylesheet" href="css/pages.min.css">
-  <script type="module" src="js/main.min.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#app">Pular para conteúdo</a>
-<header class="site-header">
-  <div class="container bar">
-    <a class="brand" href="index.html" data-spa-link>Conecta+ ONG</a>
-    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" data-hamburger>☰</button>
-    <nav class="nav" data-nav aria-label="Principal">
-      <a href="index.html" data-spa-link>Início</a>
-      <div class="nav-item">
-        <a href="projetos.html" data-spa-link aria-haspopup="true" aria-expanded="false" aria-controls="menu-projetos">Projetos ▾</a>
-        <div id="menu-projetos" class="dropdown" role="menu">
-          <a href="projetos.html#educacao" data-spa-link role="menuitem">Educação</a>
-          <a href="projetos.html#saude" data-spa-link role="menuitem">Saúde</a>
-          <a href="projetos.html#meioambiente" data-spa-link role="menuitem">Meio ambiente</a>
+  <a class="visually-hidden" href="#conteudo">Pular para conteúdo</a>
+    <header>
+        <button id="hamburger" class="btn ghost" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<nav class="navbar">
+            <a href="#" class="logo">ConectaMais ONG</a>
+            <button class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="navbar-links">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="voluntarios.html">Voluntários</a></li>
+                    <li><a href="doacoes.html">Doações</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<div class="container" role="region" aria-label="Preferências de exibição" style="display:flex; gap:.5rem; align-items:center; padding:.5rem 0">
+  <span class="badge info" aria-hidden="true">Tema</span>
+  <button type="button" class="btn ghost" data-action="set-theme" data-value="light">Claro</button>
+  <button type="button" class="btn ghost" data-action="set-theme" data-value="dark">Escuro</button>
+  <label class="btn ghost" style="gap:.5rem">
+    <input id="toggle-shield" type="checkbox" aria-label="Ativar modo alto contraste" style="accent-color:#FFD54F">
+    Alto contraste
+  </label>
+</div>
+<div class="toast" aria-live="polite"></div>
+<div id="live" class="visually-hidden" aria-live="polite"></div>
+<div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Janela modal">
+  <div class="modal">
+    <header style="display:flex; justify-content:space-between; align-items:center">
+      <strong>Exemplo de Modal</strong>
+      <button class="btn ghost" data-close-modal>Fechar</button>
+    </header>
+    <p>Conteúdo demonstrativo para cumprir o requisito de componente modal.</p>
+  </div>
+</div>
+
+
+    <main id="conteudo">
+        <section class="volunteer-intro container">
+            <h2>Seja um Voluntário ConectaMais!</h2>
+            <p>Sua energia e tempo são muito valiosos para nós. Junte-se à nossa equipe de voluntários e ajude a transformar vidas e comunidades. Temos diversas áreas onde você pode atuar, de acordo com suas habilidades e disponibilidade.</p>
+            <img src="img/voluntarios-hero.webp" alt="Grupo de voluntários sorrindo" class="hero-image">
+            <!-- Essa imagem é só um placeholder, mas dá uma boa ideia do que queremos transmitir. -->
+        </section>
+
+        <section class="how-to-volunteer container">
+            <h3>Como Funciona?</h3>
+            <div class="steps-grid">
+                <!-- Cada card representa uma etapa para se tornar voluntário. Simples e direto. -->
+                <div class="step-card">
+                    <h4>1. Preencha o Formulário</h4>
+                    <p>Conte-nos um pouco sobre você e suas áreas de interesse.</p>
+                </div>
+                <!-- Cada card representa uma etapa para se tornar voluntário. Simples e direto. -->
+                <div class="step-card">
+                    <h4>2. Entrevista</h4>
+                    <p>Nossa equipe entrará em contato para uma breve conversa e alinhamento.</p>
+                </div>
+                <!-- Cada card representa uma etapa para se tornar voluntário. Simples e direto. -->
+                <div class="step-card">
+                    <h4>3. Capacitação</h4>
+                    <p>Oferecemos treinamentos para que você se sinta preparado para sua função.</p>
+                </div>
+                <!-- Cada card representa uma etapa para se tornar voluntário. Simples e direto. -->
+                <div class="step-card">
+                    <h4>4. Comece a Ajudar!</h4>
+                    <p>Integre-se aos nossos projetos e faça a diferença na vida de muitas pessoas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="volunteer-form-section container">
+            <h3>Formulário de Inscrição</h3>
+            <form class="volunteer-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                <div class="form-group">
+                    <label for="interesses">Áreas de Interesse:</label>
+                    <select id="interesses" name="interesses" multiple>
+                        <option value="educacao">Educação</option>
+                        <option value="saude">Saúde</option>
+                        <option value="meio-ambiente">Meio Ambiente</option>
+                        <option value="administracao">Administração</option>
+                        <option value="marketing">Marketing/Comunicação</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Por que você quer ser voluntário?</label>
+                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Inscrição</button>
+                <!-- O botão de enviar, claro. -->
+            </form>
+        </section>
+
+        <section class="testimonials container">
+            <h3>Depoimentos de Voluntários</h3>
+            <!-- Depoimentos reais seriam ótimos aqui, mas por enquanto, estes exemplos já mostram a ideia. -->
+            <div class="testimonial-card">
+                <p>"Ser voluntário na ConectaMais ONG me trouxe uma nova perspectiva de vida. É gratificante ver o impacto do nosso trabalho."</p>
+                <span>- Maria Silva</span>
+            </div>
+            <!-- Depoimentos reais seriam ótimos aqui, mas por enquanto, estes exemplos já mostram a ideia. -->
+            <div class="testimonial-card">
+                <p>"A equipe é incrível e os projetos são muito bem organizados. Recomendo a todos que querem fazer a diferença!"</p>
+                <span>- João Santos</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ConectaMais ONG. Todos os direitos reservados.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
         </div>
-      </div>
-      <a href="voluntarios.html" data-spa-link>Voluntariado</a>
-      <a href="doacoes.html" data-spa-link>Doações</a>
-      <a href="contato.html" data-spa-link>Contato</a>
-    </nav>
-  </div>
-</header>
-<div class="toast-container" aria-live="polite" aria-atomic="true"></div>
-<div class="modal-backdrop" data-modal-backdrop>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h3 id="modal-title">Confirmação</h3>
-      <button class="btn btn-outline" data-close-modal>Fechar</button>
-    </div>
-    <div class="modal-body">
-      <p>Confirme a ação.</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" data-close-modal>Cancelar</button>
-      <button class="btn btn-primary" data-close-modal>OK</button>
-    </div>
-  </div>
-</div>
-<main id="app" data-spa-root>
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Como participar</h2>
-    <div class="volunteer-steps">
-      <div class="card"><div class="card-body"><strong>1. Inscreva-se</strong><p>Preencha o formulário com seus dados.</p></div></div>
-      <div class="card"><div class="card-body"><strong>2. Entrevista</strong><p>Conversaremos para alinhar expectativas.</p></div></div>
-      <div class="card"><div class="card-body"><strong>3. Mãos à obra</strong><p>Você será direcionado a um projeto.</p></div></div>
-    </div>
-  </div>
-</section>
-</main>
-<div class="theme-controls" role="group" aria-label="Preferências de tema">
-  <button class="theme-btn" data-theme="light" aria-pressed="false">Claro</button>
-  <button class="theme-btn" data-theme="dark" aria-pressed="false">Escuro</button>
-  <button class="theme-btn" data-theme="contrast" aria-pressed="false">Alto contraste</button>
-</div>
-<footer class="section" style="background:var(--white); border-top:1px solid var(--color-neutral-200)">
-  <div class="container grid-12">
-    <div class="col-md-6 col-lg-4">
-      <strong>Conecta+ ONG</strong>
-      <p class="help">CNPJ 00.000.000/0000-00</p>
-    </div>
-    <div class="col-md-6 col-lg-4 stack">
-      <strong>Contato</strong>
-      <a href="mailto:contato@conectamais.org">contato@conectamais.org</a>
-      <span class="help">(11) 0000-0000</span>
-    </div>
-    <div class="col-md-12 col-lg-4 stack">
-      <strong>Transparência</strong>
-      <a href="#">Relatórios</a>
-      <a href="#">Política de privacidade</a>
-    </div>
-  </div>
-</footer>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/voluntarios.js"></script>     <!-- Script específico para a validação do formulário de voluntários. É importante validar antes de enviar! -->
+  <script src="js/app.min.js" defer></script>
 </body>
 </html>
+
