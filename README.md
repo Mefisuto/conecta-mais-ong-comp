@@ -99,3 +99,13 @@ Passo a passo detalhado em `docs/DEPLOY.md`.
 ## Notas
 - Alterações **mínimas** foram feitas no HTML original – os novos recursos são **aditivos**.
 - Se desejar remover os consoles e comentários, utilize as versões minificadas.
+
+## Teste rápido de acessibilidade
+
+- Use a tecla **Tab** para navegar entre links e botões  
+- Pressione **Enter** para abrir o menu hambúrguer  
+- Verifique o foco visível e o contraste no modo alto contraste  
+
+## Teste adicional de acessibilidade
+- Verificar navegação por Tab
+- Conferir contraste no modo alto contraste
